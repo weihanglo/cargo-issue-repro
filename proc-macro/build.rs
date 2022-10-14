@@ -1,6 +1,6 @@
 use std::env;
 
 fn main() {
-    // We are a proc macro, TARGET should not be set.
-    assert!(env::var_os("TARGET").is_none());
+    println!("cargo:warning=pm TARGET: {}", env::var("TARGET").unwrap());
+    println!("cargo:warning=pm HOST:   {}", env::var("HOST").unwrap());
 }
